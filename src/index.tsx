@@ -2,18 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from "react-router-dom"
 import App from './App';
-import { CarrinhoComprasProvider } from './contexts/carrinhosDeCompras';
+import { MostrarFrutasProvider } from './contexts/MostrarFrutas';
+import { LimparBuscaProvider } from './contexts/LimparBusca';
+import { CarrinhoComprasProvider } from './contexts/CarrinhoCompras';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <CarrinhoComprasProvider>
-    <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </React.StrictMode>
-  </CarrinhoComprasProvider>
+  // PARA LIMPAR A BARRA DE BUSCA SEMPRE QUE CLICAR EM ORDENAR
+
+  <LimparBuscaProvider>
+    <MostrarFrutasProvider>
+      <CarrinhoComprasProvider>
+        <React.StrictMode>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </React.StrictMode>
+      </CarrinhoComprasProvider>
+    </MostrarFrutasProvider>
+  </LimparBuscaProvider>
+
 
 );

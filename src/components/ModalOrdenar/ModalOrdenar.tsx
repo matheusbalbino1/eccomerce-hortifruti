@@ -1,5 +1,6 @@
 import React, { ReactElement, ReactNode, useContext, useState } from "react";
-import { carrinhoCompras } from "../../contexts/carrinhosDeCompras";
+import { MostrarFrutas } from "../../contexts/MostrarFrutas";
+import { LimparBusca } from "../../contexts/LimparBusca";
 import { InputRadio } from "../InputRadio/InputRadio";
 import styles from "./ModalOrdenar.module.scss"
 
@@ -16,14 +17,18 @@ interface eventProps {
     }
 }
 export function ModalOrdenar(props: Props) {
-    const { allFruits, setShowFruits } = useContext(carrinhoCompras)
-    const [inputChecked, setInputChecked] = useState<String>("menosz")
+    const { allFruits, setShowFruits } = useContext(MostrarFrutas)
+
+    // PARA LIMPAR A BARRA DE BUSCA SEMPRE QUE CLICAR EM ORDENAR
+    const {toggle, inverterValor} = useContext(LimparBusca)
+
+    const [inputChecked, setInputChecked] = useState<string>("menosz")
     console.log(inputChecked)
 
 
     interface FrutaProps {
         genus: string;
-        name: string;
+        name: string | number;
         id: number;
         family: string;
         order: string;
@@ -36,26 +41,28 @@ export function ModalOrdenar(props: Props) {
         };
     };
 
-
-    function filtrarFrutas(nutriente: string) {
-
-
-
+    function ordenarAlfabetico(a: FrutaProps, b: FrutaProps) {
+        if (a.name > b.name) {
+            return 1
+        } else {
+            return -1
+        }
     }
-
-
-    function handleSubmit(e: React.SyntheticEvent) {
-        console.log(e)
-        e.preventDefault()
-        props.setShowModal(false)
+    function filtrarFrutas() {
         let todasFrutas = allFruits;
         switch (inputChecked) {
-
+            case "menosa":
+                todasFrutas.sort((a, b) => { return ordenarAlfabetico(b,a) })
+                setShowFruits(todasFrutas)
+                break;
+            case "menosz":
+                todasFrutas.sort((a, b) => { return ordenarAlfabetico(a, b) })
+                setShowFruits(todasFrutas)
+                break;
             case "maisaçucares":
                 todasFrutas.sort((a, b) => {
                     return b.nutritions.sugar - a.nutritions.sugar
                 })
-                console.log(todasFrutas)
                 setShowFruits(todasFrutas)
                 break;
             case "maiscarboídratos":
@@ -85,21 +92,39 @@ export function ModalOrdenar(props: Props) {
         }
     }
 
+
+
+    function handleSubmit(e: React.SyntheticEvent) {
+        console.log(e)
+        e.preventDefault()
+
+        // ESCONDER O MODAL DE ORDENAR
+        props.setShowModal(false)
+
+        filtrarFrutas()
+
+        // PARA LIMPAR A BARRA DE BUSCA SEMPRE QUE CLICAR EM ORDENAR
+        inverterValor()
+
+        
+
+    }
+
     return (
         <dialog open={props.open} className={styles.modalOrdenar}>
             <form onSubmit={handleSubmit}>
                 <h2>Ordenar por</h2>
                 <InputRadio
-                  name="a - z"
-                  setInputChecked={setInputChecked}
-                  checked={inputChecked === "menosz" ? true : false} 
-                  />
-                <InputRadio name="z - a" setInputChecked={setInputChecked} />
-                <InputRadio name="+ açucares" setInputChecked={setInputChecked} />
-                <InputRadio name="+ carboídratos" setInputChecked={setInputChecked} />
-                <InputRadio name="+ gorduras" setInputChecked={setInputChecked} />
-                <InputRadio name="+ calorias" setInputChecked={setInputChecked} />
-                <InputRadio name="+ proteinas" setInputChecked={setInputChecked} />
+                    text="a - z"
+                    setInputChecked={setInputChecked}
+                    defaultChecked
+                />
+                <InputRadio text="z - a" setInputChecked={setInputChecked} />
+                <InputRadio text="+ açucares" setInputChecked={setInputChecked} />
+                <InputRadio text="+ carboídratos" setInputChecked={setInputChecked} />
+                <InputRadio text="+ gorduras" setInputChecked={setInputChecked} />
+                <InputRadio text="+ calorias" setInputChecked={setInputChecked} />
+                <InputRadio text="+ proteinas" setInputChecked={setInputChecked}/>
                 <button type="submit">Ordenar</button>
             </form>
         </dialog>

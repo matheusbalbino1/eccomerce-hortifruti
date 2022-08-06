@@ -1,15 +1,15 @@
 import { GiMagnifyingGlass } from "react-icons/gi"
 import { BsArrowDownUp, BsFillGrid1X2Fill } from "react-icons/bs"
-import { Card } from "../../components/Card/Card"
+import { Card } from "../../components/CardHome/Card"
 import styles from "./Home.module.scss"
 import { useContext, useState } from "react"
-import { carrinhoCompras, FrutaProps } from "../../contexts/carrinhosDeCompras"
+import { MostrarFrutas, FrutaProps } from "../../contexts/MostrarFrutas"
 import { SearchInput } from "../../components/SearchInput/SearchInput"
 import { ModalOrdenar } from "../../components/ModalOrdenar/ModalOrdenar"
 
 export default function Home() {
 
-    const { fruits } = useContext(carrinhoCompras)
+    const { fruits } = useContext(MostrarFrutas)
     const [toggleGrade, setToggleGrade] = useState(false)
     const [showModal, setShowModal] = useState(false)
 

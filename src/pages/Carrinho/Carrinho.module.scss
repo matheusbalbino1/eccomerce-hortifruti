@@ -1,0 +1,19 @@
+.main{
+    padding-top:1rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    >h1{
+        color:var(--vermelho-600);
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    >span{
+        margin: 1rem 0;
+        opacity: 0.6;
+        color:var(--verde-700);
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+}

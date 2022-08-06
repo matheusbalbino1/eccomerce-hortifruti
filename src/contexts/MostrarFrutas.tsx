@@ -7,6 +7,7 @@ interface Props {
 
 
 export interface FrutaProps{
+    quantidade?:number;
     genus:string;
     name:string;
     id:number;
@@ -32,9 +33,9 @@ type responseProps ={
 }
 
 
-export const carrinhoCompras = createContext({} as ContextProps)
+export const MostrarFrutas = createContext({} as ContextProps)
 
-export const CarrinhoComprasProvider = ({ children }: Props) => {
+export const MostrarFrutasProvider = ({ children }: Props) => {
 
     const [allFruits, setAllFruits] = useState<FrutaProps[]>([])
     const [fruits, setFruits] = useState<FrutaProps[]>([])
@@ -53,8 +54,8 @@ export const CarrinhoComprasProvider = ({ children }: Props) => {
     }
 
     return (
-        <carrinhoCompras.Provider value={{allFruits,fruits, setShowFruits}}>
+        <MostrarFrutas.Provider value={{allFruits,fruits, setShowFruits}}>
             {children}
-        </carrinhoCompras.Provider>
+        </MostrarFrutas.Provider>
     )
 }

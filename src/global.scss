@@ -1,7 +1,7 @@
 :root {
   --verde-800: #0fa84a;
   --verde-700: #47ff8e;
-  --verde-600: #2cf579;
+  --verde-600: hsl(143, 91%, 57%);
   --vermelho-900: #a80900;
   --vermelho-600: #f5362c;
   --cinza-800: #ebebeb;
@@ -16,8 +16,12 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
-.app {
+
+#root{
   min-height: 100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 input {
   cursor: pointer;

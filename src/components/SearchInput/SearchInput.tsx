@@ -1,13 +1,21 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GiMagnifyingGlass } from "react-icons/gi";
-import { carrinhoCompras } from "../../contexts/carrinhosDeCompras";
+import { MostrarFrutas } from "../../contexts/MostrarFrutas";
+import { LimparBusca } from "../../contexts/LimparBusca";
 import styles from "./SearchInput.module.scss"
 
 export function SearchInput() {
-    const { allFruits, setShowFruits } = useContext(carrinhoCompras)
+    const { allFruits, setShowFruits, fruits } = useContext(MostrarFrutas)
     const [search, setSearch] = useState("")
     const [showResearched, setShowResearched] = useState("")
 
+    // PARA LIMPAR A BARRA DE BUSCA SEMPRE QUE CLICAR EM ORDENAR
+    const {toggle, inverterValor} = useContext(LimparBusca)
+    useEffect(()=>{
+        setShowResearched("")
+        setSearch("")
+    },[toggle])
+    
     function handleClick() {
         setShowResearched(search);
         if(search){
