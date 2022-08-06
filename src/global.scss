@@ -1,0 +1,24 @@
+:root {
+  --verde-800: #0fa84a;
+  --verde-700: #47ff8e;
+  --verde-600: #2cf579;
+  --vermelho-900: #a80900;
+  --vermelho-600: #f5362c;
+  --cinza-800: #ebebeb;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.app {
+  min-height: 100vh;
+}
+input {
+  cursor: pointer;
+}

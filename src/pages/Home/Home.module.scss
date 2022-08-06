@@ -1,0 +1,44 @@
+.main {
+  background-color: #ffffff;
+  padding: 1rem;
+  min-height: 70vh;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    > div:first-child {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      button {
+        width: 48%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border: 1.5px solid var(--vermelho-600);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        color: var(--vermelho-600);
+        font-weight: bold;
+        &:active {
+          filter: invert(0.1);
+          transform: scale(1.1);
+        }
+        svg {
+          width: 13px;
+          height: 13px;
+          margin-right: 4px;
+        }
+      }
+    }
+    >div:nth-child(2){
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+}

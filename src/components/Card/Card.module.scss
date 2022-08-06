@@ -1,0 +1,51 @@
+.card {
+  display: flex;
+  max-width: 48%;
+  background-color: white;
+  flex-direction: column;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  img {
+    width: 100%;
+  }
+  p {
+    color: black;
+    width: 100%;
+    text-align: start;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap:break-word;
+    overflow: hidden;
+    
+    &:nth-child(2) {
+      font-size: 0.9rem;
+      margin: 0.5rem 0;
+      height:30px;
+      line-height: 15px;
+    }
+    &:nth-child(3) {
+      color: var(--vermelho-600);
+      font-weight: bold;
+    }
+  }
+  button{
+    border:none;
+    margin-top: 0.5rem;
+    color:white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 0.2rem;
+    padding:0.3rem 0;
+    &:nth-child(4){
+        background-color: var(--verde-800);
+    }
+    &:nth-child(5){
+        background-color: var(--vermelho-600);
+    }
+  }
+}
+.toggleGrid{
+  max-width: 30%;
+}

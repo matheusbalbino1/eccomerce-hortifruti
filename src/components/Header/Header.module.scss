@@ -1,0 +1,17 @@
+.header{
+    background-color: var(--verde-800);
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1rem;
+    height:64px;
+    a{
+        padding-top:5px;
+        img{
+            width:200px;
+        }
+    }
+    > img{
+        height:50px;
+    }
+}
