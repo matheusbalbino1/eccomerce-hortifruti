@@ -21,7 +21,10 @@
 }
 html {
   @media (min-width: 500px) {
-    font-size: 20px;
+    font-size: 16px;
+  }
+  @media(min-width:2300px){
+    font-size: 30px;
   }
 }
 a {
@@ -40,7 +43,7 @@ button {
     background-image: url(./images/imgBack.jpg);
     background-size: cover;
     background-attachment: fixed;
-    backface-visibility: var(--verde-800);
+    background-color: #cccccc;
   }
 }
 input {

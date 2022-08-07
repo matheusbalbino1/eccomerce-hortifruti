@@ -3,7 +3,7 @@ import { FrutaProps } from "./MostrarFrutas";
 
 interface CarrinhoProps {
     carrinhoCompras: FrutaProps[];
-    setCarrinho([]): void;
+    setCarrinho([]:FrutaProps[]): void;
     quantidadeProdutos: number;
     alterarQuantidade(valor: boolean, numero?: number): void;
     precoTotal: number;
@@ -30,7 +30,7 @@ export const CarrinhoComprasProvider = ({ children }: Props) => {
         let count = 0
         carrinhoCompras.map(fruta => count = count + (fruta.id * 1.3 * Number(fruta.quantidade)))
         setPrecoTotal(count)
-    }, [quantidadeProdutos])
+    }, [quantidadeProdutos, carrinhoCompras])
 
     // FUNÇÃO PARA ALTERAR O CARRINHO DE COMPRAS
     function setCarrinho(frutas: FrutaProps[]) {

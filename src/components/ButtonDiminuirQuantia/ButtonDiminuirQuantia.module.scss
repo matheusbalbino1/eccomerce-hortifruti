@@ -10,4 +10,7 @@
   &:active {
     filter: brightness(0.8);
   }
+  @media(min-width:2300px){
+    height:60px
+  }
 }

@@ -6,6 +6,7 @@ import { Footer } from "./components/Footer/Footer";
 import { Carrinho } from "./pages/Carrinho/Carrinho";
 
 function App() {
+  console.log("teste")
   return (
     <>
       <div>

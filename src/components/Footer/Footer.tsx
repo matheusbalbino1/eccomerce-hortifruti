@@ -5,10 +5,14 @@ export function Footer() {
     return (
         <footer className={styles.footer}>
             <div>
-                <BsLinkedin />
+                <a href="https://www.linkedin.com/in/matheus-balbino-de-oliveira-4a2456195/" rel="noopener noreferrer" target={"_blank"} >
+                    <BsLinkedin />
+                </a>
                 <BsFacebook />
                 <BsInstagram />
-                <BsGithub />
+                <a href="https://github.com/matheusbalbino1" rel="noopener noreferrer" target={"_blank"}>
+                    <BsGithub />
+                </a>
             </div>
             <img src={imgLogo} alt="Imagem de uma cesta vermelha" />
             <address>

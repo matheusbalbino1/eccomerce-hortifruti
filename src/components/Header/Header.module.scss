@@ -7,6 +7,24 @@
   height: 64px;
   > section {
     display: none;
+    @media (min-width: 899px) {
+      margin-top: 20px;
+      display: inline-block;
+      width: 50%;
+    }
+    @media(min-width:2300px){
+        height:60px;
+      >form{
+        height:60px;
+        >input{
+          height:60px;
+        }
+        >button{
+          height:60px;
+          width:60px;
+        }
+      }
+    }
   }
 
   a {
@@ -17,6 +35,9 @@
       }
       img {
         width: 200px;
+        @media(min-width:2300px){
+          width:300px;
+        }
       }
     }
     &:nth-child(3) {
@@ -25,6 +46,7 @@
       position: relative;
       > img {
         width: 100%;
+        
       }
       > span {
         position: relative;
@@ -32,19 +54,17 @@
         bottom: 22px;
         font-weight: bold;
         font-size: 16px;
-        @media (min-width: 500px) {
-          bottom: 28px;
-          left: 32px;
+        color:black;
+        @media(min-width:2300px){
+          bottom:37px;
         }
       }
     }
   }
   @media (min-width: 899px) {
     height: 100px;
-    > section {
-      margin-top: 20px;
-      display: inline-block;
-      width: 50%;
-    }
+  }
+  @media(min-width:2300px){
+    height:150px;
   }
 }

@@ -10,13 +10,6 @@ interface Props {
 
 }
 
-interface eventProps {
-    preventDefault: () => void;
-    target: {
-        value: string;
-    }
-}
-
 interface FrutaProps {
     genus: string;
     name: string | number;
