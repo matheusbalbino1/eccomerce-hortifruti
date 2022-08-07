@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/eccomerce-hortifruti/static/css/main.02e01e82.css",
+    "main.js": "/eccomerce-hortifruti/static/js/main.d679c855.js",
+    "static/media/imgBack.jpg": "/eccomerce-hortifruti/static/media/imgBack.fe3ea88e7b54c1fb7ff5.jpg",
+    "index.html": "/eccomerce-hortifruti/index.html",
+    "main.02e01e82.css.map": "/eccomerce-hortifruti/static/css/main.02e01e82.css.map",
+    "main.d679c855.js.map": "/eccomerce-hortifruti/static/js/main.d679c855.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.02e01e82.css",
+    "static/js/main.d679c855.js"
+  ]
+}
