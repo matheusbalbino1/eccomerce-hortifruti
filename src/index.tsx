@@ -10,7 +10,6 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  // PARA LIMPAR A BARRA DE BUSCA SEMPRE QUE CLICAR EM ORDENAR
 
   <LimparBuscaProvider>
     <MostrarFrutasProvider>

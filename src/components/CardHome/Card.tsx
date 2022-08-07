@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import imgExemplo from "../../images/exemploImg.png"
 import styles from "./Card.module.scss"
 import { FrutaProps } from "../../contexts/MostrarFrutas"
@@ -11,32 +11,17 @@ interface Props {
 
 export function Card(props: Props) {
 
-    // const { carrinhoCompras, setCarrinho, alterarQuantidade } = useContext(CarrinhoCompras)
-    // function handleAdicionarCarrinho() {
-    //     alterarQuantidade(true)
-    //     let indiceNoCarrinho = carrinhoCompras.findIndex(fruta => fruta.name === props.fruta.name);
-    //     if (indiceNoCarrinho !== -1) {
-    //         let objeto = carrinhoCompras[indiceNoCarrinho]
-    //         objeto["quantidade"] = Number(objeto.quantidade) + 1
-
-    //         return
-
-    //     } else {
-    //         let copiaFruta = props.fruta
-    //         copiaFruta.quantidade = 1
-
-    //         setCarrinho([...carrinhoCompras, copiaFruta])
-    //         return
-    //     }
-    //     return
-
-    // }
-
     const { carrinhoCompras, setCarrinho, alterarQuantidade } = useContext(CarrinhoCompras)
+
+    // ATIVA AO CLICAR EM ADICIONAR AO CARRINHO
     function handleAdicionarCarrinho() {
+
+        // PARA AUMENTAR O NUMERO DE ITENS NO CARRINHO, TRUE PARA AUMENTAR E FALSE PARA DIMINUIR
         alterarQuantidade(true)
+
+        // SE A FRUTA JA TIVER NO CARRINHO AUMENTAR 1 NA PROPRIEDADE QUANTIDADE,
+        // SE NÃO, ADICIONA FRUTA + A PROPRIEDADE QUANTIDADE = 1
         if (carrinhoCompras.find(fruta => fruta.name === props.fruta.name)) {
-            console.log("TEM")
             let copiaCarrinhoCompras = carrinhoCompras.map((fruta) => {
                 if (fruta.name === props.fruta.name) {
                     fruta.quantidade = Number(fruta.quantidade) + 1
@@ -46,8 +31,7 @@ export function Card(props: Props) {
             })
             setCarrinho(copiaCarrinhoCompras)
             return
-        }else{
-            console.log("CRIOU")
+        } else {
             let copiaFruta = props.fruta
             copiaFruta.quantidade = 1
             setCarrinho([...carrinhoCompras, copiaFruta])

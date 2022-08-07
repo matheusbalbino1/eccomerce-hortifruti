@@ -1,29 +1,33 @@
-import { ReactElement, ReactNode, useContext, useState } from "react"
-import { JsxAttribute } from "typescript";
-import { MostrarFrutas, FrutaProps } from "../../contexts/MostrarFrutas"
+import { useState } from "react"
+import { FrutaProps } from "../../contexts/MostrarFrutas"
 import styles from "./ButtonNutricionais.module.scss"
+
 interface Props {
     fruta: FrutaProps;
 }
 
 export function ButtonNutricionais({ fruta }: Props) {
-    const { allFruits, setShowFruits } = useContext(MostrarFrutas)
     const [openModal, setOpenModal] = useState(false)
 
-    // TRAVAR O SCROLL E HABILITAR O SCROLL
+    // SE O MODAL ESTIVER ABERTO, TRAVA O SCROLL
     if (openModal) {
         let scrollTop = window.pageYOffset
         let scrollLeft = window.pageXOffset
 
-        window.onscroll = ()=>{
+        window.onscroll = () => {
             window.scrollTo(scrollLeft, scrollTop);
         };
+
+        // SE O MODAL ESTIVER FECHADO, HABILITA O SCROLL
     } else {
-        window.onscroll = ()=>{};
+        window.onscroll = () => { };
+
     }
 
+    // ABRIR MODAL AO CLICAR EM VALORES NUTRICIONAIS
     function handleOnClick() {
         setOpenModal(!openModal)
+        return
     }
 
     return (

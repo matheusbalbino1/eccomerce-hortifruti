@@ -6,7 +6,12 @@
   --vermelho-600: #f5362c;
   --cinza-1500: #333333;
   --cinza-1200: #686868;
+  --cinza-1050:#cccccc;
+  --cinza-1000:#d7ecdf;
   --cinza-800: #ebebeb;
+  --branco-0: white;
+  --preto-0: black;
+  --preto-1000:rgba(0, 0, 0, 0.103);
 }
 * {
   padding: 0;
@@ -14,16 +19,29 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+html {
+  @media (min-width: 500px) {
+    font-size: 20px;
+  }
+}
 a {
   text-decoration: none;
   cursor: pointer;
 }
-
-#root{
+button {
+  cursor: pointer;
+}
+#root {
   min-height: 100vh;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (min-width: 900px) {
+    background-image: url(./images/imgBack.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    backface-visibility: var(--verde-800);
+  }
 }
 input {
   cursor: pointer;

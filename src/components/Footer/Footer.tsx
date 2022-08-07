@@ -1,14 +1,14 @@
 import { BsLinkedin, BsFacebook, BsInstagram, BsGithub } from "react-icons/bs"
 import imgLogo from "../../images/Logo.png"
 import styles from "./Footer.module.scss"
-export function Footer (){
-    return(
+export function Footer() {
+    return (
         <footer className={styles.footer}>
             <div>
-                <BsLinkedin/>
-                <BsFacebook/>
-                <BsInstagram/>
-                <BsGithub/>
+                <BsLinkedin />
+                <BsFacebook />
+                <BsInstagram />
+                <BsGithub />
             </div>
             <img src={imgLogo} alt="Imagem de uma cesta vermelha" />
             <address>

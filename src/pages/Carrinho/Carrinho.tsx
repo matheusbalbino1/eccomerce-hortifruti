@@ -1,12 +1,21 @@
 import { useContext } from "react"
 import { CardCarrinho } from "../../components/CardCarrinho/CardCarrinho"
-import { Card } from "../../components/CardHome/Card"
 import { CarrinhoCompras } from "../../contexts/CarrinhoCompras"
 import imgCesta from "../../images/Vector.png"
 import styles from "./Carrinho.module.scss"
+
 export function Carrinho() {
 
-    const { carrinhoCompras, setCarrinho } = useContext(CarrinhoCompras)
+    const { carrinhoCompras, setCarrinho, precoTotal,alterarQuantidade } = useContext(CarrinhoCompras)
+
+    // QUANDO CLICAR EM LIMPAR CARRINHO
+    function limparCarrinho(){
+        setCarrinho([])
+        
+        // PARA ALTERAR A QUANTIDADE QUE SERA MOSTRADO NO HEADER
+        alterarQuantidade(false, 9999)
+        return
+    }
 
     return (
         <main className={styles.main}>
@@ -23,10 +32,9 @@ export function Carrinho() {
             }
 
             <p>
-                <span>Total:</span>
-                {(111.3).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}
+                <span>Total:</span> {(precoTotal).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}
             </p>
-            <button>Limpar carrinho</button>
+            <button onClick={limparCarrinho}>Limpar carrinho</button>
             <button>Finalizar compras</button>
 
 

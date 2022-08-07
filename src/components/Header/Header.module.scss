@@ -5,27 +5,46 @@
   justify-content: space-between;
   padding: 1rem;
   height: 64px;
+  > section {
+    display: none;
+  }
+
   a {
     &:first-child {
       padding-top: 5px;
+      @media (min-width: 900px) {
+        margin-left: 2rem;
+      }
       img {
         width: 200px;
       }
     }
-    &:nth-child(2) {
+    &:nth-child(3) {
       height: 50px;
       width: 50px;
       position: relative;
       > img {
         width: 100%;
       }
-      >span{
+      > span {
         position: relative;
-        left:32px !important;
-        bottom:23px;
+        left: 31px;
+        bottom: 22px;
         font-weight: bold;
-        font-size: 0.8rem;
+        font-size: 16px;
+        @media (min-width: 500px) {
+          bottom: 28px;
+          left: 32px;
+        }
       }
+    }
+  }
+  @media (min-width: 899px) {
+    height: 100px;
+    > section {
+      margin-top: 20px;
+      display: inline-block;
+      width: 50%;
     }
   }
 }

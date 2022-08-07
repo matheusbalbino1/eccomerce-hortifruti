@@ -9,8 +9,7 @@
     background: none;
     color:var(--verde-800);
     text-transform: uppercase;
-    
-    
+  
     >form{
         position:absolute;
         bottom:0;
@@ -35,7 +34,7 @@
             padding:0.5rem 0;
             border:none;
             text-transform: uppercase;
-            color:white;
+            color:var(--branco-0);
             border-radius: 1rem;
             &:active{
                 filter: brightness(0.8);

@@ -1,9 +1,8 @@
-import { GiMagnifyingGlass } from "react-icons/gi"
 import { BsArrowDownUp, BsFillGrid1X2Fill } from "react-icons/bs"
 import { Card } from "../../components/CardHome/Card"
 import styles from "./Home.module.scss"
 import { useContext, useState } from "react"
-import { MostrarFrutas, FrutaProps } from "../../contexts/MostrarFrutas"
+import { MostrarFrutas } from "../../contexts/MostrarFrutas"
 import { SearchInput } from "../../components/SearchInput/SearchInput"
 import { ModalOrdenar } from "../../components/ModalOrdenar/ModalOrdenar"
 
@@ -24,14 +23,14 @@ export default function Home() {
                             <button onClick={() => { setShowModal(true) }}><BsArrowDownUp />ORDENAR</button>
                             <button onClick={()=>{setToggleGrade(!toggleGrade) }}><BsFillGrid1X2Fill />GRADE</button>
                         </div>
-                        <div>
+                        <div className={toggleGrade ? styles.grade : ""}>
                             {fruits.map((fruta) => {
                                 return <Card fruta={fruta} key={fruta.id} toggleGrade={toggleGrade}/>
                             })}
                         </div>
                     </>
-                    : <p>Sem frutas!</p>
-
+                    : 
+                    <h2>Sem frutas!</h2>
                 }
             </section>
 

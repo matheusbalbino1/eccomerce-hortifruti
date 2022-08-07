@@ -1,7 +1,8 @@
 .card {
   display: flex;
-  max-width: 48%;
-  background-color: white;
+  max-width: 100%;
+  width: 100%;
+  background-color: var(--branco-0);
   flex-direction: column;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -23,8 +24,8 @@
     &:nth-child(2) {
       font-size: 0.9rem;
       margin: 0.5rem 0;
-      height: 30px;
-      line-height: 15px;
+      height: 2rem;
+      line-height: 1rem;
     }
     &:nth-child(3) {
       color: var(--vermelho-600);
@@ -36,25 +37,26 @@
       background-color: var(--vermelho-600);
       border: none;
       margin-top: 0.5rem;
-      color: white;
+      color: var(--branco-0);
       font-weight: bold;
       font-size: 0.8rem;
       border-radius: 0.2rem;
       padding: 0.3rem 0;
-      &:active{
+      @media (min-width: 500px) {
+        font-size: 1rem;
+      }
+      &:active {
         filter: brightness(0.8);
       }
     }
   }
- 
 }
 .toggleGrid {
-  max-width: 30%;
   > p {
-    font-size: 0.8rem;
+    font-size: 1.2rem !important;
   }
-  > button {
-    font-size: 0.6rem;
+  button {
+    font-size: 1rem !important;
     word-break: keep-all;
   }
 }

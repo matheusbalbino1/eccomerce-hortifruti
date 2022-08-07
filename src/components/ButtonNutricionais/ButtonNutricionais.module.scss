@@ -1,13 +1,14 @@
 .buttonNutricionais {
   border: none;
   margin-top: 0.5rem;
-  color: white;
+  color: var(--branco-0);
   font-weight: bold;
   font-size: 0.8rem;
   border-radius: 0.2rem;
   padding: 0.3rem 0;
   background-color: var(--verde-800);
 }
+
 .modalNutricionais {
   position: fixed;
   top: 0;
@@ -15,10 +16,10 @@
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.103);
+  background: var(--preto-1000);
 
   form {
-    
+    max-width: 300px;
     z-index: 999;
     background: white;
     margin: 0 auto;
@@ -27,13 +28,16 @@
     padding: 1rem;
     border-radius: 1rem;
     box-shadow: 0 0 50px black;
+    @media (min-width: 500px) {
+      margin-top: 200px;
+    }
     > h2 {
       text-align: center;
       color: var(--vermelho-600);
     }
     > p {
       margin: 0.5rem 0;
-      color: black;
+      color: var(--preto-0);
       text-align: center;
       font-size: 1.2rem;
     }
@@ -41,7 +45,7 @@
       font-weight: bold;
       li {
         margin-bottom: 0.5rem;
-        color: black;
+        color: var(--preto-0);
         list-style: none;
         span {
           color: var(--verde-800);
@@ -52,7 +56,7 @@
       display: block;
       width: 100%;
       margin: 1rem auto 0 auto;
-      color: white;
+      color: var(--branco-0);
       font-weight: bold;
       font-size: 0.8rem;
       border-radius: 0.2rem;
