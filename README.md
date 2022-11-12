@@ -15,4 +15,4 @@
  - O servidor iniciara na porta 5000 por padrão
  - Na pasta "eccomerce-hortifruti" rode o comando "Yarn" para instalar as dependecias
  - Rode o comando "Yarn start"
- - A requisição a API será feita por padrão na URL:http://locahost:5000/api/fruit/all, caso o servidor tenha iniciado em outra porta será necessário iniciar uma variavel de ambiente com o nome de "URL" com o valor sendo a URL correta
+ - A requisição a API será feita por padrão na URL:http://localhost:5000/api/fruit/all, caso o servidor tenha iniciado em outra porta será necessário iniciar uma variavel de ambiente com o nome de "URL" com o valor sendo a URL correta
