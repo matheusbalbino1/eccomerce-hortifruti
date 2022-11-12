@@ -101,3 +101,18 @@
   }
 
 }
+
+.loading{
+  width:70px;
+  height:70px;
+  border: 6px solid transparent;
+  border-top-color: red;
+  border-radius:50%;
+  animation: is-rotating 1s ease-in-out infinite;
+  
+}
+@keyframes is-rotating {
+  to{
+    transform: rotate(1turn);
+  }
+}

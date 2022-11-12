@@ -8,7 +8,7 @@ import { ModalOrdenar } from "../../components/ModalOrdenar/ModalOrdenar"
 
 export default function Home() {
 
-    const { fruits } = useContext(MostrarFrutas)
+    const { fruits, loading } = useContext(MostrarFrutas)
     const [toggleGrade, setToggleGrade] = useState(false)
     const [showModal, setShowModal] = useState(false)
 
@@ -16,8 +16,11 @@ export default function Home() {
         <main className={styles.main}>
             <SearchInput />
             <ModalOrdenar open={showModal} setShowModal={setShowModal} />
-            <section>
-                {fruits[0] ?
+            <section style={loading ? {display:'flex', justifyContent:'center', alignItems:'center'} : {}}>
+                {loading ? (
+                <span className={styles.loading}></span>
+                )
+                : fruits[0] ?
                     <>
                         <div>
                             <button onClick={() => { setShowModal(true) }}><BsArrowDownUp />ORDENAR</button>
@@ -32,6 +35,8 @@ export default function Home() {
                     : 
                     <h2>Sem frutas!</h2>
                 }
+                
+                
             </section>
 
         </main>

@@ -25,6 +25,7 @@ type ContextProps = {
     allFruits: FrutaProps[];
     fruits: FrutaProps[];
     setShowFruits([]): void;
+    loading: boolean;
 };
 
 type responseProps = {
@@ -34,6 +35,8 @@ type responseProps = {
 
 export const MostrarFrutas = createContext({} as ContextProps)
 
+
+
 export const MostrarFrutasProvider = ({ children }: Props) => {
 
     // TODAS AS FRUTAS QUE VIERAM DA API, ESSA NÃO MUDA
@@ -42,12 +45,29 @@ export const MostrarFrutasProvider = ({ children }: Props) => {
     // APENAS AS FRUTAS QUE DEVEM SER MOSTRADAS NA TELA, PARA OS FILTROS E ORDENS
     const [fruits, setFruits] = useState<FrutaProps[]>([])
 
-    useEffect(() => {
+    const [loading, setLoading] = useState<boolean>(false)
+
+    const getAllFruits = async () => {
         api.get("")
-            .then((resposta: responseProps) => {
-                setFruits(resposta.data)
-                setAllFruits(resposta.data)
-            })
+        .then((resposta: responseProps) => {
+            setFruits(resposta.data)
+            setAllFruits(resposta.data)
+            setLoading(false)
+        })
+    }
+
+    useEffect(() => {
+        
+        try{
+            setLoading(true)
+            getAllFruits()
+
+            
+        }catch (e){
+            setLoading(false)
+            alert("Erro ao carregar as frutas!")
+        }
+        
     }, [])
 
     // PARA SETAR AS FRUTAS QUE DEVEM SER MOSTRADAS NA TELA
@@ -57,7 +77,7 @@ export const MostrarFrutasProvider = ({ children }: Props) => {
     }
 
     return (
-        <MostrarFrutas.Provider value={{ allFruits, fruits, setShowFruits }}>
+        <MostrarFrutas.Provider value={{ allFruits, fruits, setShowFruits, loading }}>
             {children}
         </MostrarFrutas.Provider>
     )
