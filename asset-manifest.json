@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/eccomerce-hortifruti/static/css/main.c69df09c.css",
-    "main.js": "/eccomerce-hortifruti/static/js/main.e634d83f.js",
+    "main.css": "/eccomerce-hortifruti/static/css/main.b9730077.css",
+    "main.js": "/eccomerce-hortifruti/static/js/main.778afe5e.js",
     "static/media/imgBack.jpg": "/eccomerce-hortifruti/static/media/imgBack.fe3ea88e7b54c1fb7ff5.jpg",
     "index.html": "/eccomerce-hortifruti/index.html",
-    "main.c69df09c.css.map": "/eccomerce-hortifruti/static/css/main.c69df09c.css.map",
-    "main.e634d83f.js.map": "/eccomerce-hortifruti/static/js/main.e634d83f.js.map"
+    "main.b9730077.css.map": "/eccomerce-hortifruti/static/css/main.b9730077.css.map",
+    "main.778afe5e.js.map": "/eccomerce-hortifruti/static/js/main.778afe5e.js.map"
   },
   "entrypoints": [
-    "static/css/main.c69df09c.css",
-    "static/js/main.e634d83f.js"
+    "static/css/main.b9730077.css",
+    "static/js/main.778afe5e.js"
   ]
 }
